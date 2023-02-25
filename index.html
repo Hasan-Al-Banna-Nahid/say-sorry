@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="night">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorry Message</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+
+        
+        /* Modal styles */
+        .modal {
+            display: none;
+            /* Hide the modal by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black background with opacity */
+        }
+
+        /* Modal content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            /* 80% width */
+        }
+
+        /* Close button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body id="body">
+    <div class="flex flex-col items-center justify-center h-screen bg-gray-100">
+        <h1 class="text-3xl font-bold text-red-600 mb-8">I'm Sorry</h1>
+        <p class="text-xl text-gray-700 mb-4">Dear Mahima Hossain,</p>
+        <p class="text-xl text-gray-700 mb-4">I just wanted to say that I'm really sorry for Everything. I know that I
+            hurt you and I regret it deeply.</p>
+
+        <button
+            class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            onclick="sendApology()"> Apology</button>
+
+        <button id="apology-button" class="bg-amber-400 my-3 rounded w-48 h-12">Sorry</button>
+
+        <!-- Modal -->
+        <div id="apology-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Sorry <span id="girlfriend-name">Mahima Hossain</span>!</p>
+                <!-- You can add more content here to customize the modal message. -->
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+    <script>
+        // Get a reference to the button element and the output element
+        // Get a reference to the button element and the modal elements
+        const button = document.querySelector('#apology-button');
+        const modal = document.querySelector('#apology-modal');
+        const span = document.querySelector('.close');
+        const girlfriendName = document.querySelector('#girlfriend-name');
+
+        // Add a click event listener to the button
+        button.addEventListener('click', () => {
+            // Update the girlfriend name in the modal
+            girlfriendName.innerText = 'Mahi'; // Replace 'Jane' with your girlfriend's name
+
+            // Show the modal
+            modal.style.display = 'block';
+        });
+
+        // Add a click event listener to the close button
+        span.addEventListener('click', () => {
+            // Hide the modal when the close button is clicked
+            modal.style.display = 'none';
+        });
+
+        // Add a click event listener to the window
+        window.addEventListener('click', (event) => {
+            // Hide the modal if the user clicks outside of it
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+
+        function sendApology() {
+            alert("Sorry!!!!!!!!!!!!!Sorry!!!!!Sorry!!!!!!");
+            // You can add code here to send the apology message to your girlfriend.
+        }
+    </script>
+</body>
+
+</html>
